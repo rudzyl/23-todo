@@ -53,14 +53,38 @@ class Todo {
             HTML += this.generateItem(item);
         }
         this.DOM.innerHTML = HTML;
+        this.addEvents();
     }
 
     updateTask() {
 
     }
 
-    deleteTask() {
-
+    deleteTask(taskIndex) {
+        this.taskList = this.taskList.filter((item, index) => index !== taskIndex);
+        this.renderList();
     }
+
+    addEvents() {
+        const items = this.DOM.querySelectorAll('.item');
+        
+        for(let i=0; i < items.length; i++) {
+            const item = items[i];
+            const editBtn = item.querySelector('.btn.edit');
+            const removeBtn = item.querySelector('.btn.remove');
+
+            editBtn.addEventListener('click', () => {
+                this.initTodoItemEditing(item);
+            })
+            removeBtn.addEventListener('click', () => {
+                this.deleteTask(i);
+            })
+        }
+    }
+
+    initTodoItemEditing(itemDOM) {
+        console.log('initic todo redagavimas');
+    }
+
 }
 export { Todo }
