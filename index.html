@@ -22,14 +22,21 @@
 
     <div class="add-new">+</div>
 
-    <div class="lightbox">
+    <div class="lightbox" data-form="add">
         <div class="background"></div>
         <div class="content">
-            <form>
+            <form class="add">
                 <h2 class="title">add new task</h2>
                 <textarea></textarea>
                 <button class="btn cancel" type="submit">cancel</button>
                 <button class="btn add right" type="submit">add</button>
+            </form>
+            <form class="update">
+                <h2 class="title">edit task</h2>
+                <textarea></textarea>
+                <div>STATUS: atlikta/ neatlikta</div>
+                <button class="btn cancel" type="submit">cancel</button>
+                <button class="btn update right" type="submit">update</button>
             </form>
         </div>
     </div>
